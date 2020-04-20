@@ -10,29 +10,48 @@ class Queue {
 		size_t _size;
 	public:
 		//Default constructor
-		Queue();
+		Queue() {
+			_size = 0;
+		}
 
 		//Copy constructor
-		Queue(const Queue &q);
+		Queue(const Queue<Q> q) {
+			_data = q._data;
+			_size = _data.size();
+		}
 
 		//Getters
-		size_t size() const;
+		size_t size() const {
+			size_t _size;
+			return _size;
+		}	
 
-		Q front() const;
+		Q front() const {
+			front_t _front;
+			return _front->value;
+		}
 
-		Q back() const;
+		Q back() const {
+			back_t _back;
+			return _back->value;
+		}
 
 		//Push to queue
-		void enqueue(Q value);
+		void enqueue(Q value) {
+		}
 
 		//Pop from queue
-		void dequeue();
+		void dequeue() {
+		}
 
-		void print();
+		void print() {
+		}
 
-		bool search(Q value);
+		bool search(Q value) {
+		}
 
-		bool empty();
+		bool empty() {
+		}
 
 		Queue<Q> operator=(const Queue<Q> q) {
 			_data = q._data;

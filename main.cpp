@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "GeneralStack.hpp"
 #include "GeneralQueue.hpp"
+#include "GeneralStack.hpp"
 
 int main() {
 	std::cout << "Creation of a highest to lowest stack" << std::endl;
