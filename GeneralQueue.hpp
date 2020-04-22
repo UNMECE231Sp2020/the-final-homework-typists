@@ -6,7 +6,7 @@
 template <class Q>
 class Queue {
 	private:
-		List<Q> _data;
+		List<Q> _data; // A list class that comes from GeneralList.hpp
 		size_t _size;
 	public:
 		//Default constructor
@@ -15,28 +15,27 @@ class Queue {
 		}
 
 		//Copy constructor
-		Queue(const Queue<Q> q) {
+		Queue(const Queue<Q> &q) {
 			_data = q._data;
 			_size = _data.size();
 		}
 
 		//Getters
 		size_t size() const {
-			size_t _size;
 			return _size;
 		}	
 
-		Q front() const {
-			front_t _front;
-			return _front->value;
+		Q &front() const {
+			return _data.front(): 
 		}
 
-		Q back() const {
-			back_t _back;
-			return _back->value;
+		Q &back() const {
+			return _data.back();
 		}
 
-		//Push to queue
+		// We are here, Lloyd, on Wednesday, 22 April 2020.
+		// The next three "void"s and the next two "bool"s must be completed and filled out correctly.
+		//Push to queue. Similar to Getters. No return in void.
 		void enqueue(Q value) {
 		}
 
