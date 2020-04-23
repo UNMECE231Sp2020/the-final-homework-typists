@@ -3,7 +3,7 @@
 #include "GeneralQueue.hpp"
 #include "GeneralStack.hpp"
 
-int main() {
+int main() { /* Comment out to test a small section of the program below.
 	std::cout << "Creation of a highest to lowest stack" << std::endl;
 
 	Stack<double> s;
@@ -31,14 +31,14 @@ int main() {
 	s3.push("I");
 	s3.print();
  	std::cout << std::endl;
-
+        */
 	std::cout << "Creating queues!" << std::endl;
 	Queue<int> que;
 	que.enqueue(5);
 	que.enqueue(8);
 	que.enqueue(24);
 	que.print();
-
+/* Comment out to test a small section of the program above.
 	Queue<int> quoi(que);
 	quoi.dequeue();
 	quoi.enqueue(12);
@@ -54,6 +54,6 @@ int main() {
 	else {
 		std::cout << search_term << " is not in the queue" << std::endl;
 	}
-
+*/
 	return 0;
 }
