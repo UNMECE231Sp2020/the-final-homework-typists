@@ -32,12 +32,14 @@ int main() { /* Comment out to test a small section of the program below.
 	s3.print();
  	std::cout << std::endl;
         */
+
 	std::cout << "Creating queues!" << std::endl;
 	Queue<int> que;
 	que.enqueue(5);
 	que.enqueue(8);
 	que.enqueue(24);
 	que.print();
+	
 /* Comment out to test a small section of the program above.
 	Queue<int> quoi(que);
 	quoi.dequeue();
