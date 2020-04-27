@@ -24,11 +24,7 @@ class Stack {
 			return _size;
 		}
 
-		T &front() const {
-			return _data.front();
-		}
-
-		T &back() const {
+		T &top() const {
 			return _data.back();
 		}
 
@@ -36,12 +32,14 @@ class Stack {
 		// They are similar to Getters.
 		// There is no "return" when using void.
 		void push(T value) {
-			_data.push_front(value);
+			_data.push_back(value);
+			_size = _size + 1;
 		}
 
 		// Removing data from the data structure.
-		void pop(T value) {
-			_data.pop_back(value);
+		void pop() {
+			_data.pop_back();
+			_size = _size - 1;
 		}
 
 		void print() {
@@ -63,9 +61,15 @@ class Stack {
 		}
 
 		template <class S>
-		friend std::ostream &operator<<(std::ostream &out, const Stack<S> &t);
+		friend std::ostream &operator << (std::ostream &os, const Stack<S> &t);
 		template <class S>
-		friend bool operator==(const Stack<S> &left_side, const Stack<S> &right_side);
+		friend bool operator == (const Stack<S> &left_side, const Stack<S> &right_side);
 		template <class S>
-		friend bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side);
+		friend bool operator != (const Stack<S> &left_side, const Stack<S> &right_side);
 };
+		template <class S>
+                std::ostream & operator << (std::ostream &os, const Stack<S> &t) {
+			os << _data << " ";
+			return os;
+		}
+
