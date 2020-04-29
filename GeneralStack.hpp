@@ -14,8 +14,8 @@ class Stack {
 		}
 
 		// Default copy constructor.
-		Stack(const Stack<T> &t) {
-			_data = t.data;
+		Stack(const Stack &t) {
+			_data = t._data;
 			_size = _data.size();
 		}
 
@@ -67,9 +67,20 @@ class Stack {
 		template <class S>
 		friend bool operator != (const Stack<S> &left_side, const Stack<S> &right_side);
 };
-		template <class S>
-                std::ostream & operator << (std::ostream &os, const Stack<S> &t) {
-			os << _data << " ";
-			return os;
-		}
+
+template <class S>
+std::ostream &operator << (std::ostream &os, const Stack<S> &t) {
+	os << t._data << " ";
+	return os;
+}
+
+template <class S>
+bool operator == (const Stack<S> &left_side, const Stack<S> & right_side) {
+	return left_side._data == right_side._data;
+}
+
+template <class S>
+bool operator != (const Stack<S> &left_side, const Stack<S> &right_side) {
+	return left_side._data != right_side._data;
+}
 

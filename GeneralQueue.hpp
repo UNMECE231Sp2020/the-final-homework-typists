@@ -16,7 +16,7 @@ class Queue {
 		}
 
 		// Default copy constructor.
-		Queue(const Queue<Q> &q) {
+		Queue(const Queue &q) {
 			_data = q._data;
 			_size = _data.size();
 		}
@@ -42,8 +42,8 @@ class Queue {
 		}
 
 		// Pop from queue.
-		void dequeue(Q value) {
-			_data.pop_front(value);
+		void dequeue() {
+			_data.pop_front();
 		}
 
 		void print() {
@@ -76,3 +76,20 @@ class Queue {
 		friend bool operator!=(const Queue<U> &left_queue, 
 				const Queue<U> &right_queue);
 };
+
+template <class U>
+std::ostream &operator<<(std::ostream &out, const Queue<U> &q) {
+	out << q._data;
+	return out;
+}
+
+template <class U>
+bool operator==(const Queue<U> &left_queue, const Queue<U> &right_queue) {
+	return left_queue._data == right_queue._data;
+}
+
+template <class U>
+bool operator!=(const Queue<U> &left_queue, const Queue<U> &right_queue) {
+	return left_queue._data != right_queue._data;
+}
+
